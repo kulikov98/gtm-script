@@ -1,315 +1,243 @@
 <div class="re" id="re">
   <style>
-    .re {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      z-index: 9999;
-    }
-
-    @media screen and (min-width: 640px) {
       .re {
-        display: none;
+          position: fixed;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          z-index: 9999;
       }
-    }
 
-    .re .dark-back {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      background: #00000063;
-      opacity: 1;
-      transition: opacity 0.2s;
-    }
+      @media screen and (min-width: 640px) {
+          .re {
+              display: none;
+          }
+      }
 
-    .re .re_c {
-      position: absolute;
-      bottom: 0;
-      background: #fff;
-      right: 0;
-      left: 0;
-      padding: 40px 25px;
-      border-radius: 28px 28px 0 0;
-      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
-    }
+      .re .dark-back {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background: #00000063;
+          opacity: 1;
+          transition: opacity 0.2s;
+      }
 
-    .re .re_c::after {
-      content: "";
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: linear-gradient(0deg, white 50%, transparent);
-      opacity: 1;
-      transition: opacity 0.2s;
-    }
+      .re .re_c {
+          position: absolute;
+          bottom: 0;
+          background: #fff;
+          right: 0;
+          left: 0;
+          padding: 40px 25px;
+          border-radius: 28px 28px 0 0;
+          box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.25);
+      }
 
-    .re .re_h2 {
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 24px;
-    }
+      .re .re_c::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 80px;
+          background: linear-gradient(0deg, #fff 50%, transparent);
+          opacity: 1;
+          transition: opacity 0.2s;
+      }
 
-    .re .re_sub-h2 {
-      font-size: 12px;
-      font-style: normal;
-      line-height: 16px;
-      margin: 5px 0 24px;
-    }
+      .re .re_h2 {
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 24px;
+      }
 
-    .re .re_o-w {
-      height: calc(100vh - 400px);
-      max-height: 320px;
-      overflow: auto;
-    }
+      .re .re_sub-h2 {
+          font-size: 12px;
+          font-style: normal;
+          line-height: 16px;
+          margin: 5px 0 24px;
+      }
 
-    .re .re_o-i {
-      display: flex;
-      margin-bottom: 15px;
-    }
+      .re .re_o-w {
+          height: calc(100vh - 400px);
+          max-height: 320px;
+          overflow: auto;
+      }
 
-    .re .re_o-i_img {
-      width: 110px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 10px;
-      background: #f6f6f6;
-    }
+      .re .re_o-i {
+          display: flex;
+          margin-bottom: 15px;
+      }
 
-    .re .re_o-i_img img {
-      max-width: 80%;
-    }
+      .re .re_o-i_img {
+          width: 110px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          background: #f6f6f6;
+      }
 
-    .re .re_o-i:last-child {
-      margin-bottom: 0;
-    }
+      .re .re_o-i_img img {
+          max-width: 80%;
+      }
 
-    .re .re_o-i_d {
-      margin-left: 20px;
-    }
+      .re .re_o-i:last-child {
+          margin-bottom: 40px;
+      }
 
-    .re .re_upto {
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 16px;
-      margin-bottom: 5px;
-    }
+      .re .re_o-i_d {
+          margin-left: 20px;
+      }
 
-    .re .re_term {
-      font-size: 13px;
-      line-height: 16px;
-      margin-bottom: 5px;
-    }
+      .re .re_upto {
+          font-size: 15px;
+          font-weight: 700;
+          line-height: 16px;
+          margin-bottom: 5px;
+      }
 
-    .re .re_link {
-      display: inline-block;
-      border-radius: 20px;
-      background: #1cc64b;
-      color: #fff;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 16px;
-      padding: 5px 15px;
-    }
+      .re .re_term {
+          font-size: 13px;
+          line-height: 16px;
+          margin-bottom: 5px;
+      }
 
-    .re .re_close,
-    .re .re_open {
-      display: inline-flex;
-      background: #eee;
-      padding: 4px;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      top: 15px;
-      right: 15px;
-    }
+      .re .re_link {
+          display: inline-block;
+          border-radius: 20px;
+          background: #1cc64b;
+          color: #fff;
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 16px;
+          padding: 5px 15px;
+      }
 
-    .re .re_open {
-      display: none;
-    }
+      .re .re_close,
+      .re .re_open {
+          display: inline-flex;
+          background: #eee;
+          padding: 4px;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 15px;
+          right: 15px;
+      }
 
-    .re.closed .dark-back,
-    .re.closed .re_c::after {
-      opacity: 0;
-    }
+      .re .re_open {
+          display: none;
+      }
 
-    .re.closed .re_c {
-      height: 75px;
-      padding: 20px 25px;
-    }
+      .re.closed .dark-back,
+      .re.closed .re_c::after {
+          opacity: 0;
+      }
 
-    .re.closed .re_h2 {
-      font-size: 15px;
-      line-height: 1.2rem;
-      margin-bottom: 30px;
-    }
+      .re.closed .re_c {
+          height: 75px;
+          padding: 20px 25px;
+      }
 
-    .re.closed .re_close {
-      display: none;
-    }
+      .re.closed .re_h2 {
+          font-size: 15px;
+          line-height: 1.2rem;
+          margin-bottom: 30px;
+      }
 
-    .re.closed .re_open {
-      display: inline-flex;
-    }
+      .re.closed .re_close {
+          display: none;
+      }
+
+      .re.closed .re_open {
+          display: inline-flex;
+      }
   </style>
   <div class="dark-back"></div>
   <div class="re_c">
-    <a href="javascript:" class="re_close">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="11"
-        height="10"
-        viewBox="0 0 11 10"
-        fill="none"
-      >
-        <mask
-          id="mask0_1_1187"
-          style="mask-type: alpha"
-          maskUnits="userSpaceOnUse"
-          x="1"
-          y="1"
-          width="9"
-          height="8"
-        >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M1.53799 1.38712C1.7667 1.18085 2.13751 1.18085 2.36622 1.38712L9.394 7.72536C9.62271 7.93163 9.62271 8.26606 9.394 8.47233C9.16529 8.6786 8.79447 8.6786 8.56576 8.47233L1.53799 2.13409C1.30928 1.92782 1.30928 1.59339 1.53799 1.38712Z"
-            fill="#006FFD"
-          ></path>
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M9.394 1.38712C9.16529 1.18085 8.79447 1.18085 8.56576 1.38712L1.53799 7.72536C1.30928 7.93163 1.30928 8.26606 1.53799 8.47233C1.7667 8.6786 2.13751 8.6786 2.36622 8.47233L9.394 2.13409C9.6227 1.92782 9.6227 1.59339 9.394 1.38712Z"
-            fill="#006FFD"
-          ></path>
-        </mask>
-        <g mask="url(#mask0_1_1187)">
-          <rect
-            x="0.780762"
-            y="0.704224"
-            width="9.37037"
-            height="8.45099"
-            fill="#949494"
-          ></rect>
-        </g>
-      </svg>
-    </a>
-    <a href="javascript:" class="re_open">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="11"
-        height="7"
-        viewBox="0 0 11 7"
-        fill="none"
-      >
-        <path
-          d="M1 6L6 1L11 6"
-          stroke="black"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        ></path>
-      </svg>
-    </a>
-    <div class="re_h2">
-      Want more? The highest probability of approval is here:
-    </div>
-    <div class="re_sub-h2">
-      To increase the likelihood of approval, fill out several applications
-    </div>
-    <div class="re_o-w">
-      <div class="re_o-l">
-        <div class="re_o-i">
-          <div class="re_o-i_img">
-            <img
-              src="https://doctordong.vn/assets/images/logos/moneycat.svg"
-              alt=""
-            />
-          </div>
-          <div class="re_o-i_d">
-            <div class="re_upto">Up to 20,000,000 VND</div>
-            <div class="re_term">7-60 days</div>
-            <a href="#" class="re_link">Get loan</a>
-          </div>
-        </div>
-        <div class="re_o-i">
-          <div class="re_o-i_img">
-            <img
-              src="https://doctordong.vn/assets/images/logos/oncredit.svg"
-              alt=""
-            />
-          </div>
-          <div class="re_o-i_d">
-            <div class="re_upto">Up to 20,000,000 VND</div>
-            <div class="re_term">7-60 days</div>
-            <a href="#" class="re_link">Get loan</a>
-          </div>
-        </div>
-        <div class="re_o-i">
-          <div class="re_o-i_img">
-            <img
-              src="https://doctordong.vn/assets/images/logos/vayvnd.svg"
-              alt=""
-            />
-          </div>
-          <div class="re_o-i_d">
-            <div class="re_upto">Up to 20,000,000 VND</div>
-            <div class="re_term">7-60 days</div>
-            <a href="#" class="re_link">Get loan</a>
-          </div>
-        </div>
-        <div class="re_o-i">
-          <div class="re_o-i_img">
-            <img
-              src="https://doctordong.vn/assets/images/logos/moneycat.svg"
-              alt=""
-            />
-          </div>
-          <div class="re_o-i_d">
-            <div class="re_upto">Up to 20,000,000 VND</div>
-            <div class="re_term">7-60 days</div>
-            <a href="#" class="re_link">Get loan</a>
-          </div>
-        </div>
-        <div class="re_o-i">
-          <div class="re_o-i_img">
-            <img
-              src="https://doctordong.vn/assets/images/logos/oncredit.svg"
-              alt=""
-            />
-          </div>
-          <div class="re_o-i_d">
-            <div class="re_upto">Up to 20,000,000 VND</div>
-            <div class="re_term">7-60 days</div>
-            <a href="#" class="re_link">Get loan</a>
-          </div>
-        </div>
-        <div class="re_o-i">
-          <div class="re_o-i_img">
-            <img
-              src="https://doctordong.vn/assets/images/logos/vayvnd.svg"
-              alt=""
-            />
-          </div>
-          <div class="re_o-i_d">
-            <div class="re_upto">Up to 20,000,000 VND</div>
-            <div class="re_term">7-60 days</div>
-            <a href="#" class="re_link">Get loan</a>
-          </div>
-        </div>
+      <a href="javascript:" class="re_close"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="10"
+              viewBox="0 0 11 10" fill="none">
+              <mask id="mask0_1_1187" style="mask-type: alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="9"
+                  height="8">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M1.53799 1.38712C1.7667 1.18085 2.13751 1.18085 2.36622 1.38712L9.394 7.72536C9.62271 7.93163 9.62271 8.26606 9.394 8.47233C9.16529 8.6786 8.79447 8.6786 8.56576 8.47233L1.53799 2.13409C1.30928 1.92782 1.30928 1.59339 1.53799 1.38712Z"
+                      fill="#006FFD"></path>
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M9.394 1.38712C9.16529 1.18085 8.79447 1.18085 8.56576 1.38712L1.53799 7.72536C1.30928 7.93163 1.30928 8.26606 1.53799 8.47233C1.7667 8.6786 2.13751 8.6786 2.36622 8.47233L9.394 2.13409C9.6227 1.92782 9.6227 1.59339 9.394 1.38712Z"
+                      fill="#006FFD"></path>
+              </mask>
+              <g mask="url(#mask0_1_1187)">
+                  <rect x="0.780762" y="0.704224" width="9.37037" height="8.45099" fill="#949494"></rect>
+              </g>
+          </svg> </a><a href="javascript:" class="re_open"><svg xmlns="http://www.w3.org/2000/svg" width="11"
+              height="7" viewBox="0 0 11 7" fill="none">
+              <path d="M1 6L6 1L11 6" stroke="black" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg></a>
+      <div class="re_h2">
+          Cần vay nhiều hơn? Các lựa chọn dưới đây có cơ hội duyệt hồ sơ cao:
       </div>
-    </div>
+      <div class="re_sub-h2">
+          Để tăng cơ hội được duyệt, hãy điền nhiều hồ sơ vay càng tốt
+      </div>
+      <div class="re_o-w">
+          <div class="re_o-l">
+              <div class="re_o-i czu">
+                  <a href="https://lnk.do/0dSlAG2" class="re_o-i_img" target="_blank"><img
+                          src="https://doctordong.vn/assets/images/logos/crezu.svg" alt="" /></a>
+                  <div class="re_o-i_d">
+                      <div class="re_upto">Lên đến 15,000,000 VND</div>
+                      <div class="re_term">10-60 ngày</div>
+                      <a href="https://lnk.do/0dSlAG2" class="re_link" target="_blank">Đăng ký vay</a>
+                  </div>
+              </div>
+              <div class="re_o-i czu">
+                  <a href="https://lnk.do/WyafLuoY" class="re_o-i_img" target="_blank"><img
+                          src="https://doctordong.vn/assets/images/logos/cashspace.svg" alt="" /></a>
+                  <div class="re_o-i_d">
+                      <div class="re_upto">Lên đến 20,000,000 VND</div>
+                      <div class="re_term">5-60 ngày</div>
+                      <a href="https://lnk.do/WyafLuoY" class="re_link" target="_blank">Đăng ký vay</a>
+                  </div>
+              </div>
+              <div class="re_o-i jap">
+                  <a href="https://lnk.do/1ojYlAKh" class="re_o-i_img" target="_blank"><img
+                          src="https://doctordong.vn/assets/images/logos/jeff.svg" alt="" /></a>
+                  <div class="re_o-i_d">
+                      <div class="re_upto">Lên đến 20,000,000 VND</div>
+                      <div class="re_term">7-60 ngày</div>
+                      <a href="https://lnk.do/1ojYlAKh" class="re_link" target="_blank">Đăng ký vay</a>
+                  </div>
+              </div>
+              <div class="re_o-i">
+                  <a href="https://lnk.do/OTHdJ7jF" class="re_o-i_img" target="_blank"><img
+                          src="https://doctordong.vn/assets/images/logos/oncredit.svg" alt="" /></a>
+                  <div class="re_o-i_d">
+                      <div class="re_upto">Lên đến 12,000,000 VND</div>
+                      <div class="re_term">10-60 ngày</div>
+                      <a href="https://lnk.do/OTHdJ7jF" class="re_link" target="_blank">Đăng ký vay</a>
+                  </div>
+              </div>
+              <div class="re_o-i">
+                  <a href="https://lnk.do/NBYys9Oi" class="re_o-i_img" target="_blank"><img
+                          src="https://doctordong.vn/assets/images/logos/finami.png" alt="" /></a>
+                  <div class="re_o-i_d">
+                      <div class="re_upto">Lên đến 10,000,000 VND</div>
+                      <div class="re_term">5-30 ngày</div>
+                      <a href="https://lnk.do/NBYys9Oi" class="re_link" target="_blank">Đăng ký vay</a>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
 </div>

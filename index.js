@@ -17,6 +17,18 @@ try {
     var parser = new DOMParser();
     var el = parser.parseFromString(`__minifiedHtml__`, "text/html");
 
+    if (localStorage && localStorage.getItem) {
+      var removeClassNames = ['czu', 'jap'];
+      var removeClassName = localStorage.getItem('_as0');
+
+      if (removeClassName && removeClassNames.indexOf(removeClassName) !== -1) {
+        var collectionArray = [];
+        var collection = el.getElementsByClassName(removeClassName);
+        Array.prototype.forEach.call(collection, function(el) { collectionArray.push(el); });
+        collectionArray.forEach(function(el) { el.remove() });
+      }
+    }
+
     setTimeout(() => {
       document
         .querySelector("body")
